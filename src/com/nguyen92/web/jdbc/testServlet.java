@@ -53,6 +53,10 @@ public class testServlet extends HttpServlet {
 			myRs = myStmt.executeQuery(sql);
 			
 			// Step 5:  Process the result set
+			while(myRs.next()){
+				String email = myRs.getString("email");
+				out.println(email);
+			}
 				
 		} catch (Exception exc) {
 			exc.printStackTrace();
