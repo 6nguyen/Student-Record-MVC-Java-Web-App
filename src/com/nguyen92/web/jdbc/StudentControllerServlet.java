@@ -74,7 +74,7 @@ public class StudentControllerServlet extends HttpServlet {
 		List<Student> students = studentDbUtil.getStudents();
 		
 		// add students to the request object as an attribute
-		// setAttribute("name", object ref);
+		// setAttribute("name", object ref);  name used in listStudent jsp page
 		request.setAttribute("studentList", students);
 		
 		// forward request to JSP page (view)
