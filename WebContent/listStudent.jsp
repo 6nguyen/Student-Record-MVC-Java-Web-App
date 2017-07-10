@@ -7,16 +7,48 @@
 <head><title>Student Roster</title></head>
 
 <%
-	// get the students from the request object (sent by servlet)
-	// attribute name found in StudentControllServlet in listStudents()
+	// Step 1: get the students from the request object (sent by servlet)
+	// Attribute name found in StudentControllServlet in listStudents()
 	List<Student> studentList = (List<Student>) request.getAttribute("studentList");
 
 
 %>
 
-<%= studentList %>
 
 <body>
+
+<!-- Step 2:  Make sure the request is being processed correctly before 
+	continuing, then comment out -->
+<!-- <%= studentList %> -->
+
+
+	<div id="wrapper">
+		<div id="header">
+			<h2>DZ Center For Kids Who Can't Read Good</h2>
+			<h4>And Who Wanna Learn to do Other Stuff Good Too</h4>
+		</div>
+	</div>
+	
+	<div id="container">
+		<div id="contet">
+			<table>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+				</tr>
+				
+			<% for (Student x : studentList) { %>
+				<tr>
+					<td><%= x.getFirstName() %></td>
+					<td><%= x.getLastName() %></td>
+					<td><%= x.getEmail() %></td>
+				</tr>
+			<% } %>
+									
+			</table>
+		</div>
+	</div>
 
 
 
