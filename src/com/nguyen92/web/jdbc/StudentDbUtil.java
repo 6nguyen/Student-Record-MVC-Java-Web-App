@@ -46,8 +46,8 @@ public class StudentDbUtil {
 			
 				// retrieve data from ResultSet row
 				int id = myRs.getInt("id");
-				String firstName = myRs.getString("firstName");
-				String lastName = myRs.getString("lastName");
+				String firstName = myRs.getString("first_Name");
+				String lastName = myRs.getString("last_Name");
 				String email = myRs.getString("email");
 				
 				// create new Student object
