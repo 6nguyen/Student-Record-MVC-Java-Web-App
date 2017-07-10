@@ -4,7 +4,10 @@
 
 <!DOCTYPE html>
 <html>
-<head><title>Student Roster</title></head>
+<head>
+	<title>Student Roster</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
 
 <%
 	// Step 1: get the students from the request object (sent by servlet)
