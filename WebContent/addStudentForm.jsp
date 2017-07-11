@@ -39,15 +39,18 @@
 					</tr>
 					<tr>
 						<td><label></label></td>
-						<td><input type="submit" value="Submit" /></td>
+						<td><input type="submit" value="Save" class="save" /></td>
 					</tr>
 				</tbody>
 			</table>
-		
 		</form>
+
+		<div style="clear: both;"></div>
+	
+		<p>
+			<a href="StudentControllerServlet">Back to list.</a>
+		</p>
 	</div>
-
-
 </body>
 
 </html>
