@@ -21,7 +21,7 @@
 		
 		<form action="StudentControllerServlet" method="GET">
 		
-			<input type="hidden" name="action" value="addStudent" />
+			<input type="hidden" name="action" value="ADD" />
 			
 			<table>
 				<tbody>
