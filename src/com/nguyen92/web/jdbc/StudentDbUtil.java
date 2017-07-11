@@ -123,4 +123,53 @@ public class StudentDbUtil {
 			close(myConn, myStmt, null);
 		}		
 	}
+
+// retrieves a student based on their student ID from the DB
+	public Student getStudent(String theStudentID) throws Exception {
+		Student theStudent = null;
+		
+		// Set up JDBC objects
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
+		int studentID;
+		
+		try {
+			// Convert student id to int
+			studentID = Integer.parseInt(theStudentID);
+			
+			// get connection to database
+			myConn = dataSource.getConnection();
+			
+			// create sql statement to get selected student			
+			// create prepared statement
+			String sql = "SELECT * FROM student WHERE id=?";
+			myStmt = myConn.prepareStatement(sql);
+			
+			// set param values
+			myStmt.setInt(1, studentID);
+			
+			// execute statement
+			myRs = myStmt.executeQuery();
+			
+			// retrieve data from ResultSet row
+			if (myRs.next()) {
+				String firstName = myRs.getString("first_Name");
+				String lastName = myRs.getString("last_Name");
+				String email = myRs.getString("email");
+				
+				// create a new Student object using the new studentID
+				theStudent = new Student(studentID, firstName, lastName, email);
+			} else {
+				throw new Exception("Could not find studentID: " + studentID);
+			}
+			
+			return theStudent;
+		}
+		// clean up JDBC objects
+		finally {
+			close(myConn, myStmt, myRs);
+		}
+
+	}
 }
