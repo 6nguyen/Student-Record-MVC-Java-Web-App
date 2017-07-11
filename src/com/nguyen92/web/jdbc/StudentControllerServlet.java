@@ -90,6 +90,9 @@ public class StudentControllerServlet extends HttpServlet {
 			case "ADD":
 				addStudent(request,response);
 				break;
+			case "LOAD":
+				loadStudent(request,response);
+				break;
 			default:
 				listStudents(request,response);
 			}
@@ -99,6 +102,8 @@ public class StudentControllerServlet extends HttpServlet {
 		}
 		
 	}
+
+
 
 	// Step 4a:  Create method to list students
 	private void listStudents(HttpServletRequest request,
@@ -138,6 +143,15 @@ public class StudentControllerServlet extends HttpServlet {
 		 response.sendRedirect(request.getContextPath() + "/StudentControllerServlet?action=LIST");
 		 //response.sendRedirect(request.getContextPath() + "/StudentControllerServlet?command=LIST");
     }
+	
+	
+
+	private void loadStudent(HttpServletRequest request,
+			HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 }
  
