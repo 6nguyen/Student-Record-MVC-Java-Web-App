@@ -6,6 +6,7 @@
 <html>
 <head>
 	<title>Student Roster</title>
+	
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 
@@ -13,8 +14,6 @@
 	// Step 1: get the students from the request object (sent by servlet)
 	// Attribute name found in StudentControllServlet in listStudents()
 	List<Student> studentList = (List<Student>) request.getAttribute("studentList");
-
-
 %>
 
 
@@ -28,12 +27,12 @@
 	<div id="wrapper">
 		<div id="header">
 			<h2>DZ Center For Kids Who Can't Read Good</h2>
-			<h4>And Who Wanna Learn to do Other Stuff Good Too</h4>
 		</div>
 	</div>
 	
 	<div id="container">
-		<div id="contet">
+		<div id="content">
+		
 			<table>
 				<tr>
 					<th>First Name</th>
@@ -50,6 +49,7 @@
 			<% } %>
 									
 			</table>
+			
 		</div>
 	</div>
 
