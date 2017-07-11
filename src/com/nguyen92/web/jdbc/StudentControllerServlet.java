@@ -70,9 +70,6 @@ public class StudentControllerServlet extends HttpServlet {
 			case "LIST":
 				listStudents(request, response);
 				break;
-			case "ADD":
-				addStudent(request,response);
-				break;
 			}
 		} catch (Exception e){
 			throw new ServletException(e);
@@ -80,7 +77,28 @@ public class StudentControllerServlet extends HttpServlet {
 	}
 
 
-
+	// Step 6:  Write method for doPost
+	// Implement the Post/Redirect/Get design pattern. 
+	// This pattern is designed to prevent duplicate form submissions from BUG above
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try{
+		// read the "action" parameter
+			String theAction = request.getParameter("action");
+			
+		// route to appropriate method
+			switch(theAction){
+			case "ADD":
+				addStudent(request,response);
+				break;
+			default:
+				listStudents(request,response);
+			}
+		}
+		catch(Exception e) {
+			throw new ServletException(e);
+		}
+		
+	}
 
 	// Step 4a:  Create method to list students
 	private void listStudents(HttpServletRequest request,
@@ -116,8 +134,10 @@ public class StudentControllerServlet extends HttpServlet {
 		studentDbUtil.addStudent(newStudent);
 		
 		// send back to student list
-		listStudents(request, response);
-	}
+		// send as Redirect to avoid multiple-browser reload issue
+		 response.sendRedirect(request.getContextPath() + "/StudentControllerServlet?action=LIST");
+		 //response.sendRedirect(request.getContextPath() + "/StudentControllerServlet?command=LIST");
+    }
 	
 }
  
