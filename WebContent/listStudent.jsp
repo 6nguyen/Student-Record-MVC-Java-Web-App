@@ -15,7 +15,8 @@
 
 	<div id="wrapper">
 		<div id="header">
-			<h2>DZ Center For Kids Who Can't Read Good</h2>
+			<h2>DZ Center</h2>
+			<h5>For Kids Who Can't Read Good</h5>
 		</div>
 	</div>
 	
