@@ -1,6 +1,5 @@
 <!-- Import all files from com.nguyen92.web.jdbc package -->
-<%@ page import="java.util.*, com.nguyen92.web.jdbc.*" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -10,18 +9,8 @@
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 
-<%
-	// Step 1: get the students from the request object (sent by servlet)
-	// Attribute name found in StudentControllServlet in listStudents()
-	List<Student> studentList = (List<Student>) request.getAttribute("studentList");
-%>
-
 
 <body>
-
-<!-- Step 2:  Make sure the request is being processed correctly before 
-	continuing, then comment out -->
-<!-- <%= studentList %> -->
 
 
 	<div id="wrapper">
@@ -39,14 +28,14 @@
 					<th>Last Name</th>
 					<th>Email</th>
 				</tr>
-				
-			<% for (Student x : studentList) { %>
+					
+			<c:forEach var="currentStudent" items="${studentList}">
 				<tr>
-					<td><%= x.getFirstName() %></td>
-					<td><%= x.getLastName() %></td>
-					<td><%= x.getEmail() %></td>
+					<td>${currentStudent.firstName}</td>
+					<td>${currentStudent.lastName}</td>
+					<td>${currentStudent.email}</td>
 				</tr>
-			<% } %>
+			</c:forEach>
 									
 			</table>
 			
