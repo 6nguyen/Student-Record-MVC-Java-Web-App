@@ -53,7 +53,8 @@ public class StudentControllerServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// BUG: When hitting refresh with student add data in URL,
+		// student will be continuously added 
 		try {
 		// Step 5: read the "action" parameter
 			String theAction = request.getParameter("action");
