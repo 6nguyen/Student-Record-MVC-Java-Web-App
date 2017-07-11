@@ -21,6 +21,7 @@
 		
 		<form action="StudentControllerServlet" method="POST">
 		
+		<!-- Add hidden field to track studentID -->
 			<input type="hidden" name="action" value="EDIT" />
 			<input type="hidden" name="studentID" value="${THE_STUDENT.id}" />
 			
