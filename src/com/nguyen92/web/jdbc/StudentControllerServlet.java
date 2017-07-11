@@ -55,6 +55,25 @@ public class StudentControllerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
+		// Step 5: read the "action" parameter
+			String theAction = request.getParameter("action");
+			
+		// if the action is missing, default to listing the students
+			if (theAction == null) {
+				theAction = "LIST";
+			}
+			
+		// Based on action, route to the appropriate method
+		// Step 6: make case for addStudent, method below
+			switch (theAction) {
+			case "LIST":
+				listStudents(request, response);
+				break;
+			case "ADD":
+				addStudent(request,response);
+				break;
+			}
+			
 		// Step 4a: list the students in MVC fashion
 		// exception caused by listStudents method below
 		listStudents(request, response);
@@ -64,6 +83,8 @@ public class StudentControllerServlet extends HttpServlet {
 
 	
 	}
+
+
 
 
 	// Step 4a:  Create method to list students
@@ -83,6 +104,14 @@ public class StudentControllerServlet extends HttpServlet {
 		
 	}
 
+	
+	// Step 6a:  Create method to add students
+	private void addStudent(HttpServletRequest request,
+			HttpServletResponse response) {
+		
+		
+	}
+	
 }
  
 

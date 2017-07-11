@@ -48,7 +48,7 @@
 		<div style="clear: both;"></div>
 	
 		<p>
-			<a href="StudentControllerServlet">Back to list.</a>
+			<a href="StudentControllerServlet">Back to List</a>
 		</p>
 	</div>
 </body>
