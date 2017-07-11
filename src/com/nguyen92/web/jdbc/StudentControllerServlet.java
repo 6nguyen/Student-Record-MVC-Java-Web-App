@@ -147,9 +147,20 @@ public class StudentControllerServlet extends HttpServlet {
 	
 
 	private void loadStudent(HttpServletRequest request,
-			HttpServletResponse response) {
-		// TODO Auto-generated method stub
+			HttpServletResponse response) throws Exception {
 		
+		// read student ID from form data
+		String theStudentID = request.getParameter("studentID");
+		
+		// get student from database (db util)
+		Student theStudent = studentDbUtil.getStudent(theStudentID);
+		
+		// place student in the request attribute
+		request.setAttribute("THE_STUDENT", theStudent);
+		
+		// forward to jsp page: updateStudentForm.jsp
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/updateStudentForm.jsp");
+		dispatcher.forward(request, response);
 	}
 	
 	
