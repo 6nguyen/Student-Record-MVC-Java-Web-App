@@ -35,6 +35,7 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
+					<th></th>
 				</tr>
 					
 			<c:forEach var="currentStudent" items="${studentList}">
@@ -42,6 +43,7 @@
 					<td>${currentStudent.firstName}</td>
 					<td>${currentStudent.lastName}</td>
 					<td>${currentStudent.email}</td>
+					<td><a href="editStudentForm.jsp">Edit</a></td>
 				</tr>
 			</c:forEach>
 									
