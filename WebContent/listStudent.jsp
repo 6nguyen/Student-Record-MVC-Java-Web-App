@@ -15,7 +15,7 @@
 
 	<div id="wrapper">
 		<div id="header">
-			<h1>DZ Center</h1>
+			<h1>DZL Center</h1>
 			<h5>For Kids Who Can't Read Good</h5>
 		</div>
 	</div>
@@ -25,8 +25,10 @@
 		
 			<!-- Add new button: Add Student -->
 			<input type="button" value="Add Student"
-				onclick="window.location.href='addStudentForm.jsp'; false;"
-			/>
+				onclick="window.location.href='addStudentForm.jsp'; return false;"
+				class="addStudentButton"
+			/> 
+			<br/><br/>
 			
 			<table>
 				<tr>
