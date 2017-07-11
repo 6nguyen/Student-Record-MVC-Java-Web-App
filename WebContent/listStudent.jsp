@@ -39,11 +39,18 @@
 				</tr>
 					
 			<c:forEach var="currentStudent" items="${studentList}">
+			
+				<!-- Set up a unique Edit link for each student -->
+				<c:url var="uniqueEditLink" value="StudentControllerServlet">
+					<c:param name="action" value="LOAD" />
+					<c:param name="studentID" value="${currentStudent.id}" />
+				</c:url>
+				
 				<tr>
 					<td>${currentStudent.firstName}</td>
 					<td>${currentStudent.lastName}</td>
 					<td>${currentStudent.email}</td>
-					<td><a href="editStudentForm.jsp">Edit</a></td>
+					<td><a href="${uniqueEditLink}">Edit</a></td>
 				</tr>
 			</c:forEach>
 									
