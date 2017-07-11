@@ -15,7 +15,7 @@
 
 	<div id="wrapper">
 		<div id="header">
-			<h2>DZ Center</h2>
+			<h1>DZ Center</h1>
 			<h5>For Kids Who Can't Read Good</h5>
 		</div>
 	</div>
@@ -23,6 +23,11 @@
 	<div id="container">
 		<div id="content">
 		
+			<!-- Add new button: Add Student -->
+			<input type="button" value="Add Student"
+				onclick="window.location.href='addStudentForm.jsp'; false;"
+			/>
+			
 			<table>
 				<tr>
 					<th>First Name</th>
