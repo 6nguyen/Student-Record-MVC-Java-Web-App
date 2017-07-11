@@ -73,15 +73,9 @@ public class StudentControllerServlet extends HttpServlet {
 				addStudent(request,response);
 				break;
 			}
-			
-		// Step 4a: list the students in MVC fashion
-		// exception caused by listStudents method below
-		listStudents(request, response);
 		} catch (Exception e){
 			throw new ServletException(e);
 		}
-
-	
 	}
 
 
@@ -107,9 +101,21 @@ public class StudentControllerServlet extends HttpServlet {
 	
 	// Step 6a:  Create method to add students
 	private void addStudent(HttpServletRequest request,
-			HttpServletResponse response) {
+			HttpServletResponse response) throws Exception{
 		
+		// read student info from form data
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String email = request.getParameter("email");
 		
+		// create a new student object
+		Student newStudent = new Student(firstName, lastName, email);
+		
+		// add the student to the database
+		studentDbUtil.addStudent(newStudent);
+		
+		// send back to student list
+		listStudents(request, response);
 	}
 	
 }
