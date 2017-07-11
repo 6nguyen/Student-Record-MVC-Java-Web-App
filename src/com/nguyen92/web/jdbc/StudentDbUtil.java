@@ -125,18 +125,18 @@ public class StudentDbUtil {
 	}
 
 // retrieves a student based on their student ID from the DB
-	public Student getStudent(String theStudentID) throws Exception {
+	public Student getStudent(String theStudentId) throws Exception {
 		Student theStudent = null;
 		
 		// Set up JDBC objects
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
 		ResultSet myRs = null;
-		int studentID;
+		int studentId;
 		
 		try {
-			// Convert student id to int
-			studentID = Integer.parseInt(theStudentID);
+			// Convert student id String to int
+			studentId = Integer.parseInt(theStudentId);
 			
 			// get connection to database
 			myConn = dataSource.getConnection();
@@ -147,7 +147,7 @@ public class StudentDbUtil {
 			myStmt = myConn.prepareStatement(sql);
 			
 			// set param values
-			myStmt.setInt(1, studentID);
+			myStmt.setInt(1, studentId);
 			
 			// execute statement
 			myRs = myStmt.executeQuery();
@@ -159,9 +159,9 @@ public class StudentDbUtil {
 				String email = myRs.getString("email");
 				
 				// create a new Student object using the new studentID
-				theStudent = new Student(studentID, firstName, lastName, email);
+				theStudent = new Student(studentId, firstName, lastName, email);
 			} else {
-				throw new Exception("Could not find studentID: " + studentID);
+				throw new Exception("Could not find studentID: " + studentId);
 			}
 			
 			return theStudent;

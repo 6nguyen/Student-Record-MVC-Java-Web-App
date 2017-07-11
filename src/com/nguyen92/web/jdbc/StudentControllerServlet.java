@@ -145,21 +145,21 @@ public class StudentControllerServlet extends HttpServlet {
     }
 	
 	
-
+// Load student to prepopulate form when editing student
 	private void loadStudent(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
 		// read student ID from form data
-		String theStudentID = request.getParameter("studentID");
+		String theStudentId = request.getParameter("studentId");
 		
 		// get student from database (db util)
-		Student theStudent = studentDbUtil.getStudent(theStudentID);
+		Student theStudent = studentDbUtil.getStudent(theStudentId);
 		
 		// place student in the request attribute
 		request.setAttribute("THE_STUDENT", theStudent);
 		
 		// forward to jsp page: updateStudentForm.jsp
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/updateStudentForm.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/editStudentForm.jsp");
 		dispatcher.forward(request, response);
 	}
 	

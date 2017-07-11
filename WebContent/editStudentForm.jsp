@@ -23,17 +23,14 @@
 		
 		<!-- Add hidden field to track studentID -->
 			<input type="hidden" name="action" value="EDIT" />
-			<input type="hidden" name="studentID" value="${THE_STUDENT.id}" />
+			<input type="hidden" name="studentId" value="${THE_STUDENT.id}" />
 			
 			<table>
 				<tbody>
 					<tr>
-						<!-- THE_STUDENT comes from StudentControllerServlet
-							loadStudent() -->
 						<td><label>First Name:</label></td>
 						<td><input type="text" name="firstName" 
-								   value="${THE_STUDENT.firstName}"/></td>
-						
+									value="${THE_STUDENT.firstName}"/></td>
 					</tr>
 					<tr>
 						<td><label>Last Name:</label></td>
@@ -42,7 +39,7 @@
 					</tr>
 					<tr>
 						<td><label>Email:</label></td>
-						<td><input type="text" name="email"
+						<td><input type="text" name="email" 
 									value="${THE_STUDENT.email}"/></td>
 					</tr>
 					<tr>
