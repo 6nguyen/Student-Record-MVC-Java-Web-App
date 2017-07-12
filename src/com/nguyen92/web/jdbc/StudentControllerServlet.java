@@ -93,6 +93,9 @@ public class StudentControllerServlet extends HttpServlet {
 			case "LOAD":
 				loadStudent(request,response);
 				break;
+			case "EDIT":
+				editStudent(request,response);
+				break;
 			default:
 				listStudents(request,response);
 			}
@@ -102,7 +105,6 @@ public class StudentControllerServlet extends HttpServlet {
 		}
 		
 	}
-
 
 
 	// Step 4a:  Create method to list students
@@ -145,7 +147,8 @@ public class StudentControllerServlet extends HttpServlet {
     }
 	
 	
-// Load student to prepopulate form when editing student
+	// Step 7:  Create method to load student data
+	// Load student to pre-populate form when editing student
 	private void loadStudent(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
@@ -163,6 +166,28 @@ public class StudentControllerServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 	
+	
+	// Step 8:  Create method to editStudent
+	private void editStudent(HttpServletRequest request,
+			HttpServletResponse response) throws Exception{
+
+		// read student info from form data
+		int id = Integer.parseInt(request.getParameter("studentId"));
+		
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String email = request.getParameter("email");
+		
+		// create a new student object
+		Student theStudent = new Student(id, firstName, lastName, email);
+		
+		// perform update on database
+		studentDbUtil.editStudent(theStudent);
+		
+		// send them back to the listStudents page
+		listStudents(request,response);
+		
+	}
 	
 }
  
