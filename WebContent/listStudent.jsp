@@ -41,6 +41,12 @@
 					
 			<c:forEach var="currentStudent" items="${studentList}">
 			
+				<!-- Set up a unique View link for each student to view courses -->
+				<c:url var="courseLink" value="StudentControllerServlet" >
+					<c:param name="action" value="COURSE" />
+					<c:param name="studentId" value="${currentStudent.id}" />				
+				</c:url>
+			
 				<!-- Set up a unique Edit link for each student -->
 				<c:url var="editLink" value="StudentControllerServlet">
 					<c:param name="action" value="LOAD" />
@@ -52,6 +58,7 @@
 					<c:param name="action" value="DELETE" />		
 					<c:param name="studentId" value="${currentStudent.id}" />
 				</c:url>
+				
 				
 				<tr>
 					<td>${currentStudent.firstName}</td>
