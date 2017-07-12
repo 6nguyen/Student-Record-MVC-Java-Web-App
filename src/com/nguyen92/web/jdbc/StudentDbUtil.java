@@ -124,7 +124,8 @@ public class StudentDbUtil {
 		}		
 	}
 
-// retrieves a student based on their student ID from the DB
+// Step 6: Create method for getStudent
+	// retrieves a student based on their student ID from the DB
 	public Student getStudent(String theStudentId) throws Exception {
 		Student theStudent = null;
 		
@@ -170,6 +171,43 @@ public class StudentDbUtil {
 		finally {
 			close(myConn, myStmt, myRs);
 		}
-
 	}
+
+
+	// Step 7:  Create method for editStudent
+	// edits student information on the db
+	public void editStudent(Student theStudent) throws Exception{
+		
+		// Set up JDBC objects
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		
+		try {
+			// get db connection
+			myConn = dataSource.getConnection();
+			
+			// create SQL update statement
+			// prepare statement
+			String sql = "UPDATE student"
+						+ " SET first_name=?, last_name=?, email=?"
+						+ " WHERE id=?";
+			myStmt = myConn.prepareStatement(sql);
+				
+			// set param values
+			myStmt.setString(1, theStudent.getFirstName());
+			myStmt.setString(2, theStudent.getLastName());
+			myStmt.setString(3, theStudent.getEmail());
+			myStmt.setInt(4, theStudent.getId());
+						
+			// execute SQL statement
+			myStmt.execute();
+			
+		}
+		finally {
+			close(myConn, myStmt, null);
+		}
+	}
+	
+	
+	
 }
