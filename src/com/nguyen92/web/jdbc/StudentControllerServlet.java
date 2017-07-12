@@ -168,6 +168,7 @@ public class StudentControllerServlet extends HttpServlet {
 	
 	
 	// Step 8:  Create method to editStudent
+	// retrieve student data from list and create a new student object to add into db
 	private void editStudent(HttpServletRequest request,
 			HttpServletResponse response) throws Exception{
 
