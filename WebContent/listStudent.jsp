@@ -35,6 +35,7 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
+					<th>Courses</th>
 					<th></th>
 				</tr>
 					
@@ -56,6 +57,7 @@
 					<td>${currentStudent.firstName}</td>
 					<td>${currentStudent.lastName}</td>
 					<td>${currentStudent.email}</td>
+					<td><a href="${viewCourseLink}">View</a></td>
 					<td>
 						<a href="${editLink}">Edit</a>
 						 | 
