@@ -59,7 +59,9 @@
 					<td>
 						<a href="${editLink}">Edit</a>
 						 | 
-						<a href="${deleteLink}">Delete</a>
+						<a href="${deleteLink}"
+							onclick="if (!(confirm('There will be no way to restore this student once deleted.  Is that okay?'))) return false"
+						>Delete</a>
 					 </td>
 				</tr>
 			</c:forEach>
