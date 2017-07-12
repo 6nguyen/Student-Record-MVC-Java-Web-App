@@ -197,6 +197,8 @@ public class StudentControllerServlet extends HttpServlet {
 	
 	
 	// Step 9:  Create method for deleteStudent()
+	// retrieve student data from list and pass the student's 
+	// id as string to dbUtil deleteStudent()
 	private void deleteStudent(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
@@ -211,6 +213,9 @@ public class StudentControllerServlet extends HttpServlet {
 		listStudents(request,response);
 	}
 	
+	
+	
+	// END FILE
 }
  
 
