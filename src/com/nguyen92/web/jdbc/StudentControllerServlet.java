@@ -73,11 +73,15 @@ public class StudentControllerServlet extends HttpServlet {
 			case "LOAD":
 				loadStudent(request,response);
 				break;
+			case "DELETE":
+				deleteStudent(request,response);
+				break;
 			}
 		} catch (Exception e){
 			throw new ServletException(e);
 		}
 	}
+
 
 
 	// Step 6:  Write method for doPost
@@ -173,6 +177,7 @@ public class StudentControllerServlet extends HttpServlet {
 			HttpServletResponse response) throws Exception{
 
 		// read student info from form data
+		// parameter name found in listStudent.jsp in <c:url var="editLink"...
 		int id = Integer.parseInt(request.getParameter("studentId"));
 		
 		String firstName = request.getParameter("firstName");
@@ -188,6 +193,22 @@ public class StudentControllerServlet extends HttpServlet {
 		// send them back to the listStudents page
 		listStudents(request,response);
 		
+	}
+	
+	
+	// Step 9:  Create method for deleteStudent()
+	private void deleteStudent(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		
+		// read student info from data
+		// param name found in listStudent.jsp in <c:url var="deleteLink"...
+		String theStudentId = request.getParameter("studentId");		
+		
+		// delete student from database
+		studentDbUtil.deleteStudent(theStudentId);
+		
+		// send user back to listStudent page
+		listStudents(request,response);
 	}
 	
 }
