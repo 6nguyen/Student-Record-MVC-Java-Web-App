@@ -1,4 +1,3 @@
-<!-- Import all files from com.nguyen92.web.jdbc package -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
@@ -41,12 +40,6 @@
 					
 			<c:forEach var="currentStudent" items="${studentList}">
 			
-				<!-- Set up a unique View link for each student to view courses -->
-				<c:url var="courseLink" value="StudentControllerServlet" >
-					<c:param name="action" value="COURSE" />
-					<c:param name="studentId" value="${currentStudent.id}" />				
-				</c:url>
-			
 				<!-- Set up a unique Edit link for each student -->
 				<c:url var="editLink" value="StudentControllerServlet">
 					<c:param name="action" value="LOAD" />
@@ -64,7 +57,7 @@
 					<td>${currentStudent.firstName}</td>
 					<td>${currentStudent.lastName}</td>
 					<td>${currentStudent.email}</td>
-					<td><a href="${viewCourseLink}">View</a></td>
+					<td><a href="studentCourses">View</a></td>
 					<td>
 						<a href="${editLink}">Edit</a>
 						 | 
