@@ -70,6 +70,9 @@ public class StudentControllerServlet extends HttpServlet {
 			case "LIST":
 				listStudents(request, response);
 				break;
+			case "LOAD":
+				loadStudent(request,response);
+				break;
 			}
 		} catch (Exception e){
 			throw new ServletException(e);
@@ -89,9 +92,6 @@ public class StudentControllerServlet extends HttpServlet {
 			switch(theAction){
 			case "ADD":
 				addStudent(request,response);
-				break;
-			case "LOAD":
-				loadStudent(request,response);
 				break;
 			case "EDIT":
 				editStudent(request,response);
