@@ -3,10 +3,30 @@ html, body{
 	padding:0px; 
 	font-family:"Patalino", serif, Helvetica, sans-serif;
 	
-	  width: 100%;
-	  height: 100%;
+	background-image: url("http://www.wallpapersguru.com/wp-content/uploads/2014/11/cambridge-university-uk-wallpaper-1920x1080.jpg");
+	/*Full height*/
+    height: 100%; 
+	width: 100%;
+
+    /*Center and scale the image nicely*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
+ 
+/* .bg { 
+    The image used
+    background-image: url("http://www.wallpapersguru.com/wp-content/uploads/2014/11/cambridge-university-uk-wallpaper-1920x1080.jpg");
+
+    Full height
+    height: 100%; 
+
+    Center and scale the image nicely
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
 
 
 table {   
@@ -18,7 +38,9 @@ table {
 th {
 	text-align:left;
 	border-bottom:1px solid gray;
-	background:none repeat scroll 0 0 #26CA7C;
+	background-color:rgba(0,0,0,0.6);
+	background-image: url("http://www.wallpapersguru.com/wp-content/uploads/2014/11/cambridge-university-uk-wallpaper-1920x1080.jpg");
+	
 	padding:10px;
 	color: #FFFFFF;
 }
@@ -38,7 +60,7 @@ tr:nth-child(odd) {background: #eaeaea}
 tr:hover {background-color: #8df1e4}
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 90%; background: #26ca7c; margin-top: 0px; padding:15px 0px 35px 15px;}
+#header {width: 90%; background-color:rgba(0,0,0,.6); margin-top: 0px; padding:15px 0px 35px 15px;}
 #header h1 {width: 100%; margin:auto; color: #FFFFFF;}
 #header h5 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
