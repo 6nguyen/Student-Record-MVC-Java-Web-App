@@ -21,11 +21,25 @@ input {
 }
 
 .save {
-	font-weight: bold;
-	width: 130px; 
+	border-radius: 5px; 
+	padding: 4px; 
+	font-size: 20px;
+	font-weight: none;
+	width: 150px; 
 	padding: 5px 10px; 
-	margin-top: 30px;
-	background: #cccccc;
+	
+	margin-bottom: 15px;
+	background: #dfdfdf;
+}
+
+.save:hover {
+	background-color: #b6b6b6;
+}
+
+.save:active {
+  background-color: #b6b6b6;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
 }
 
 table {   
