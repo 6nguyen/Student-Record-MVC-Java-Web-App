@@ -1,7 +1,7 @@
 html, body{
 	margin-left:15px; margin-right:15px; 
 	padding:0px; 
-	font-family:""Patalino", Arial, Helvetica, sans-serif;
+	font-family:"Patalino", serif, Helvetica, sans-serif;
 	
 	  width: 100%;
 	  height: 100%;
@@ -38,22 +38,30 @@ tr:nth-child(odd) {background: #eaeaea}
 tr:hover {background-color: #8df1e4}
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 90%; background: #26ca7c; margin-top: 0px; padding:15px 0px 35px 15px; -webkit-transform: translate3d(0,0,0);}
+#header {width: 90%; background: #26ca7c; margin-top: 0px; padding:15px 0px 35px 15px;}
 #header h1 {width: 100%; margin:auto; color: #FFFFFF;}
 #header h5 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
 #container h3 {color: #000;}
 #container #content {margin-top: 20px;}
 
-.add-student-button {
-	border: 1px solid #808080; 
+.addStudentButton {
 	border-radius: 5px; 
 	padding: 4px; 
-	font-size: 12px;
-	font-weight: bold;
-	width: 120px; 
+	font-size: 20px;
+	font-weight: none;
+	width: 150px; 
 	padding: 5px 10px; 
 	
 	margin-bottom: 15px;
-	background: #cccccc;
+	background: #dfdfdf;
+}
+
+.addStudentButton:hover {
+	background-color: #b6b6b6;
+}
+.addStudentButton:active {
+  background-color: #b6b6b6;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
 }
