@@ -27,6 +27,7 @@ input {
 	font-weight: none;
 	width: 150px; 
 	padding: 5px 10px; 
+	box-shadow: 0 3px #666;
 	
 	margin-bottom: 15px;
 	background: #dfdfdf;
