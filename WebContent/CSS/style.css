@@ -6,28 +6,34 @@ html, body{
 
 table {   
 	border-collapse:collapse;
-	border-bottom:1px solid gray;
 	font-family: Tahoma,Verdana,Segoe,sans-serif;
 	width:92%;
 }
  
 th {
+	text-align:left;
 	border-bottom:1px solid gray;
-	background:none repeat scroll 0 0 #0775d3;
+	background:none repeat scroll 0 0 #26CA7C;
 	padding:10px;
 	color: #FFFFFF;
 }
 
-tr {
-	border-top:1px solid gray;
-	text-align:center;	
+td {
+	text-align:left;
+	padding:6px;	
+}
+
+
+table, th, td{
+	border:1px solid lightgray;
 }
  
 tr:nth-child(even) {background: #FFFFFF}
-tr:nth-child(odd) {background: #BBBBBB}	
+tr:nth-child(odd) {background: #eaeaea}	
+tr:hover {background-color: #8df1e4}
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 90%; background: #0775d3; margin-top: 0px; padding:15px 0px 35px 15px;}
+#header {width: 90%; background: #26ca7c; margin-top: 0px; padding:15px 0px 35px 15px;}
 #header h1 {width: 100%; margin:auto; color: #FFFFFF;}
 #header h5 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
@@ -35,7 +41,7 @@ tr:nth-child(odd) {background: #BBBBBB}
 #container #content {margin-top: 20px;}
 
 .add-student-button {
-	border: 1px solid #666; 
+	border: 1px solid #808080; 
 	border-radius: 5px; 
 	padding: 4px; 
 	font-size: 12px;
