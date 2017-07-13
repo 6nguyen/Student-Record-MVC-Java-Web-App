@@ -57,7 +57,7 @@
 					<td>${currentStudent.firstName}</td>
 					<td>${currentStudent.lastName}</td>
 					<td>${currentStudent.email}</td>
-					<td><a href="studentCourses">View</a></td>
+					<td><a href="studentCourses.jsp">View</a></td>
 					<td>
 						<a href="${editLink}">Edit</a>
 						 | 
