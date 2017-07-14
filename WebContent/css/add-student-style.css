@@ -1,15 +1,29 @@
-form {
-	margin-top: 10px;
+/*  Container for form h3, form content, href */
+#container {
+	margin: 50px 100px 50px 0px;
+	width: 45%;
+	padding: 30px;
+	background-color: rgba(0,0,0,0.6);
+	color: #FFFFFF;
 }
 
+/* "Add Student" */
+#container h3 {
+	margin-top: 0px;
+	color:#FFFFFF;
+	font-family: Tahoma,Verdana,Segoe,sans-serif;
+	font-size: 25px;	
+}
+
+/* Form labels */
 label {
-	font-size: 16px; 
+	font-size: 18px; 
 	width: 100px; 
 	display: block; 
 	text-align: right;
 	margin-right: 10px;
 	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-bottom: 5px;
 }
 
 input {
@@ -20,6 +34,8 @@ input {
 	font-size: 16px;
 }
 
+
+/* Save button */
 .save {
 	border-radius: 5px; 
 	padding: 4px; 
@@ -43,6 +59,18 @@ input {
   transform: translateY(4px);
 }
 
+/* HREF LINK */
+a {
+	font-size: 20px;
+    color: #0085e8;
+    cursor: auto;
+    text-decoration: underline;
+}
+
+a:hover {
+	color: #39abff;
+}
+
 table {   
 	border-style:none;
 	width:50%;
@@ -52,8 +80,8 @@ td {
 	border:none;
 }
 
-tr:nth-child(even) {background: #FFFFFF}
-tr:nth-child(odd) {background: #FFFFFF}
+tr:nth-child(even) {background-color: rgba(0,0,0,0)}
+tr:nth-child(odd) {background-color: rgba(0,0,0,0)}
 
 tr {
 	border-style:none;
