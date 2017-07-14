@@ -1,5 +1,4 @@
 html, body{
-	margin-left:15px; margin-right:15px; 
 	padding:0px; 
 	font-family:"Patalino", serif, Helvetica, sans-serif;
 	
@@ -14,20 +13,14 @@ html, body{
     background-size: cover;
 
 }
- 
-/* .bg { 
-    The image used
-    background-image: url("http://www.wallpapersguru.com/wp-content/uploads/2014/11/cambridge-university-uk-wallpaper-1920x1080.jpg");
 
-    Full height
-    height: 100%; 
+#wrapper {
+	margin: 0px 35px 0px 35px;
+}
 
-    Center and scale the image nicely
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
+#content {
+	margin: 0px 35px 0px 35px;
+}
 
 table {   
 	border-collapse:collapse;
@@ -41,7 +34,7 @@ th {
 	background-color:rgba(0,0,0,0.6);
 	background-image: url("http://www.wallpapersguru.com/wp-content/uploads/2014/11/cambridge-university-uk-wallpaper-1920x1080.jpg");
 	
-	padding:10px;
+	padding:15px;
 	color: #FFFFFF;
 }
 
@@ -57,25 +50,24 @@ table, th, td{
  
 tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #eaeaea}	
-tr:hover {background-color: #8df1e4}
+tr:hover {background-color: #93d1ff}
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 90%; background-color:rgba(0,0,0,.6); margin-top: 0px; padding:15px 0px 35px 15px;}
-#header h1 {width: 100%; margin:auto; color: #FFFFFF;}
-#header h5 {width: 100%; margin:auto; color: #FFFFFF;}
+#header {width: 87%; background-color:rgba(0,0,0,.6); margin-top: 0px; padding:35px 0px 40px 20px;}
+#header h1 {font-size: 43px; width: 100%; margin:auto; color: #FFFFFF;}
+#header h5 {font-size: 16px; width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
 #container h3 {color: #000;}
 #container #content {margin-top: 20px;}
 
 .addStudentButton {
 	border-radius: 5px; 
-	padding: 4px; 
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: none;
-	width: 150px; 
+	width: 175px; 
 	padding: 5px 10px; 
-	
-	margin-bottom: 15px;
+	margin-left: 25px;
+	margin-bottom: 5px;
 	background: #dfdfdf;
 }
 
