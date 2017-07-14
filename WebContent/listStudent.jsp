@@ -10,7 +10,6 @@
 
 
 <body>
-	<div class="bg"></div>
 
 	<div id="wrapper">
 		<div id="header">
