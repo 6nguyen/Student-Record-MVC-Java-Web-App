@@ -76,11 +76,14 @@ public class StudentControllerServlet extends HttpServlet {
 			case "DELETE":
 				deleteStudent(request,response);
 				break;
+			case "SEARCH":
+				searchStudent(request,response);
 			}
 		} catch (Exception e){
 			throw new ServletException(e);
 		}
 	}
+
 
 
 
@@ -213,6 +216,24 @@ public class StudentControllerServlet extends HttpServlet {
 		listStudents(request,response);
 	}
 	
+	
+	// Step 10:  Create method for searchStudent()
+	private void searchStudent(HttpServletRequest request,
+			HttpServletResponse response) throws Exception{
+
+		// read search name String from form data
+		String theSearchName = request.getParameter("theSearchName");
+		
+		// search students from db util using String name
+		List<Student> students = studentDbUtil.searchStudents(theSearchName);
+		
+		// add student to the request
+		request.setAttribute("studentList", students);
+		
+		// send to the JSP page (view)
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/listStudent.jsp");
+		dispatcher.forward(request,  response);
+	}
 	
 	
 	// END FILE
