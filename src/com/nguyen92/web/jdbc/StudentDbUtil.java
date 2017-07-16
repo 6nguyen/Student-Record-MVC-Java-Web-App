@@ -241,6 +241,79 @@ public class StudentDbUtil {
 			close(myConn, myStmt, null);
 		}
 	}
+
+	// Step 10:  Create method for searchStudents()
+	public List<Student> searchStudents(String theSearchName) throws Exception{
+		
+		// create a new ArrayList to return 
+		List<Student> students = new ArrayList<>();
+		
+		// Create JDBC objects
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
+		
+		try {
+			// set up connection to db
+			myConn = dataSource.getConnection();
+			
+			// make sure theSearchName is not empty
+			// if it is empty, just return all of the students
+			if (theSearchName != null && theSearchName.trim().length() > 0) {
+				
+				// create sql statement to search student by name
+				// converts the student's name in db to lowercase
+				// searches for first name and/or last name
+				// LIKE searches for substrings, ie "Jo" will match with "John", "Joanne", etc
+				String sql = "SELECT * FROM student"
+							+ " WHERE lower(first_name) LIKE ?"
+							+ " OR lower(last_name) LIKE ?";
+				
+				// create prepared statement
+				myStmt = myConn.prepareStatement(sql);
+				
+				// set sql statement param values
+				// % is wildcard for 0 or more characters
+				// converts theSearchName to lowercase to match MySQL's student name above
+				String theSearchNameLike = "%" + theSearchName.toLowerCase() + "%";
+				myStmt.setString(1, theSearchNameLike);
+				myStmt.setString(2, theSearchNameLike);
+			}
+			else {
+				// return all of the students
+				// create sql statement to get all students
+				String sql = "SELECT * FROM student ORDER BY last_name";
+				
+				// create prepared statement
+				myStmt = myConn.prepareStatement(sql);
+			}
+			
+			// execute prepared statement
+			myRs = myStmt.executeQuery();
+			
+			// loop to retrieve data from ResultSet row
+			while(myRs.next()) {
+				int id = myRs.getInt("id");
+				String firstName = myRs.getString("first_name");
+				String lastName = myRs.getString("last_name");
+				String email = myRs.getString("email");
+				
+				// create new Student object
+				Student tempStudent = new Student(id, firstName, lastName, email);
+				
+				// add it to the list of students
+				students.add(tempStudent);
+			}
+			
+			return students;
+		}
+
+		// clean up/close JDBC objects
+		finally {
+			close(myConn, myStmt, myRs);
+		}
+		
+	}
 	
 	
 	
