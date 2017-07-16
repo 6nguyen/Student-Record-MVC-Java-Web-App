@@ -30,8 +30,11 @@
 			<!-- Add a search box -->
 			<form action="StudentControllerServlet" method="GET">
 				<input type="hidden" name="action" value="SEARCH" />
-				Search student: <input type="text" name="theSearchName" />
-				<input type="submit" value="Search" class="add-student-button" />
+				<input type="text" name="theSearchName" 
+					placeholder="Search student name..." 
+					class="searchStudentBox"
+				/>
+				<input type="submit" value="Search" class="searchStudentButton" />
 			</form>
 			
 			
