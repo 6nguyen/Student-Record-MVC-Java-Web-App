@@ -27,13 +27,14 @@ body {
 #container {
 	margin: auto;
 	width: 85%;
+	margin-bottom: 100px;
 }
 
 table {   
 	border-collapse:collapse;
 	font-family: Tahoma,Verdana,Segoe,sans-serif;
 	width: 100%;
-	margin-bottom: 100px;
+	margin-bottom: 10px;
 }
  
 th {
@@ -111,4 +112,17 @@ tr:hover {background-color: #93d1ff}
 
 .searchStudentButton:hover {
 	background-color: #b6b6b6;
+}
+
+.backLink {
+	font-size: 20px;
+    color: #0085e8;
+    cursor: auto;
+    text-decoration: underline;
+    background-color:rgba(0,0,0,0.7);
+    padding: 5px; 
+}
+
+.backLink:hover {
+	color: #39abff;
 }

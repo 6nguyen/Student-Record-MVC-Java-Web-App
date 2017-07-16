@@ -56,7 +56,7 @@
 			</div>
 			
 			<br/><br/>
-			<a href="StudentControllerServlet">Back to List</a>
+			<a href="StudentControllerServlet" class="backLink">Back to List</a>
 			
 		</div>
 	</div>
