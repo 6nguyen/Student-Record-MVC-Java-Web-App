@@ -20,12 +20,14 @@
 	
 	<div id="container">
 		<div id="content">
-		
+			
+			
 			<!-- Add new button: Add Student -->
 			<input type="button" value="Add Student"
 				onclick="window.location.href='addStudentForm.jsp'; return false;"
 				class="addStudentButton"
 			/> 
+			
 			
 			<!-- Add a search box -->
 			<form action="StudentControllerServlet" method="GET">
@@ -36,6 +38,7 @@
 				/>
 				<input type="submit" value="Search" class="searchStudentButton" />
 			</form>
+
 			
 			
 			<br/><br/>
