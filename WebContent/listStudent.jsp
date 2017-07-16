@@ -26,6 +26,15 @@
 				onclick="window.location.href='addStudentForm.jsp'; return false;"
 				class="addStudentButton"
 			/> 
+			
+			<!-- Add a search box -->
+			<form action="StudentControllerServlet" method="GET">
+				<input type="hidden" name="action" value="SEARCH" />
+				Search student: <input type="text" name="theSearchName" />
+				<input type="submit" value="Search" class="add-student-button" />
+			</form>
+			
+			
 			<br/><br/>
 			
 			<div style="overflow-x:auto;">
